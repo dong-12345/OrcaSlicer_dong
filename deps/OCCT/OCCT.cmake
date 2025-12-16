@@ -30,6 +30,7 @@ orcaslicer_add_cmake_project(OCCT
         -DBUILD_MODULE_ModelingAlgorithms=OFF
         -DBUILD_MODULE_ModelingData=OFF
         -DBUILD_MODULE_Visualization=OFF
+        $<$<PLATFORM_ID:Windows>:-DCMAKE_CXX_FLAGS=/MP /Zm100> #减少内存占用
 )
 
 # add_dependencies(dep_OCCT ${FREETYPE_PKG})
